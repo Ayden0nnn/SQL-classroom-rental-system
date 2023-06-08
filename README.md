@@ -7,7 +7,8 @@
 
 <h2>連接phpMyAdmin</h2>
 <a href='https://www.youtube.com/watch?v=cu0hatjEUTo&ab_channel=VideoStorehouse'>https://www.youtube.com/watch?v=cu0hatjEUTo&ab_channel=VideoStorehouse</a>
-<p>打開config.inc.php貼上(路徑(windows): C:\AppServ\www\phpMyAdmin\config.sample.inc.php)->要把config.sample.inc.php改名成config.inc.php</p>
+<p>打開config.inc.php貼上</p>
+<p>(路徑(windows): C:\AppServ\www\phpMyAdmin\config.sample.inc.php)->要把config.sample.inc.php改名成config.inc.php</p>
 <p>/**</p>
  <p>* Second server</p>
  <p>*/</p>
