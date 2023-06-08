@@ -6,17 +6,17 @@
 <p>（每層資料夾都要打清楚才進得去QQ）</p>
 
 <h2>連接phpMyAdmin</h2>
-<a href='https://www.youtube.com/watch?v=cu0hatjEUTo&ab_channel=VideoStorehouse'>影片</a>
+<a href='https://www.youtube.com/watch?v=cu0hatjEUTo&ab_channel=VideoStorehouse'>https://www.youtube.com/watch?v=cu0hatjEUTo&ab_channel=VideoStorehouse</a>
 <p>打開config.inc.php貼上</p>
-<div>/**
- * Second server
- */
-$i++;
-/* Authentication type */
-$cfg['Servers'][$i]['auth_type'] = 'cookie';
-/* Server parameters */
-$cfg['Servers'][$i]['host'] = '140.122.184.125';
-$cfg['Servers'][$i]['port'] = '3307';
-$cfg['Servers'][$i]['connect_type'] = 'tcp';
-$cfg['Servers'][$i]['compress'] = false;
-$cfg['Servers'][$i]['AllowNoPassword'] = false;</div>
+<p>/**</p>
+ <p>* Second server</p>
+ <p>*/</p>
+<p>$i++;</p>
+<p>/* Authentication type */</p>
+<p>$cfg['Servers'][$i]['auth_type'] = 'cookie';</p>
+<p>/* Server parameters */</p>
+<p>$cfg['Servers'][$i]['host'] = '140.122.184.125';</p>
+<p>$cfg['Servers'][$i]['port'] = '3307';</p>
+<p>$cfg['Servers'][$i]['connect_type'] = 'tcp';</p>
+<p>$cfg['Servers'][$i]['compress'] = false;</p>
+<p>$cfg['Servers'][$i]['AllowNoPassword'] = false;</p>
