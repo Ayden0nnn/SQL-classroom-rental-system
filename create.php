@@ -1,10 +1,10 @@
 <?php
 
 // ******** update your personal settings ******** 
-$servername = "localhost";
-$username = "";
-$password = "";
-$dbname = "db_class";
+$servername = '140.122.184.125:3307';
+$username = 'team18';
+$password = '0J/rLx9rOh4WhNb6';
+$dbname = 'team18';
 
 // Connecting to and selecting a MySQL database
 $conn = new mysqli($servername, $username, $password, $dbname);
