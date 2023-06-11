@@ -57,7 +57,7 @@
   }
 
   // ******** update your personal settings ********
-  $sql = 'SELECT * FROM student'; // set up your sql query
+  $sql = 'SELECT * FROM classroom'; // set up your sql query
   $result = $conn->query($sql); // Send SQL Query
 
   if ($result->num_rows > 0) {
@@ -65,21 +65,25 @@
       echo '<tr>';
       echo '<th>id</th>';
       echo '<th>Name</th>';
-      echo '<th>stdid</th>';
-      echo '<th colspan="2">Action</th>';
+      echo '<th>capacity</th>';
+      echo '<th>equipment</th>';
+      echo '<th colspan="2">location</th>';
       echo '</tr>';
       while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
           // Process the Result here , need to modify.
-          $id = $row['id'];
-          $StuName = $row['StuName'];
-          $StuNum = $row['StuNum'];
-		  $gender = $row['gender'];
+          $Classroom_id = $row['Classroom_id'];
+          $Classroom_name = $row['Classroom_name'];
+          $Classroom_capacity= $row['Classroom_capacity'];
+		  $Classroom_equipment = $row['Classroom_equipment'];
+		  $Classroom_location = $row['Classroom_location'];
           echo '<tr>';
-          echo '<td>' . $id . '</td>';
-          echo '<td>' . $StuName . '</td>';
-          echo '<td>' . $StuNum . '</td>';
-          echo "<td><a href='update.php?id=" . $id . "&gender=" . $gender ."'>修改</a></td>";
-          echo "<td><a href='delete.php?id=" . $id . "'>刪除</a></td>";
+          echo '<td>' . $Classroom_id . '</td>';
+          echo '<td>' . $Classroom_name . '</td>';
+          echo '<td>' . $Classroom_capacity . '</td>';
+          echo '<td>' . $Classroom_equipment . '</td>';
+          echo '<td>' . $Classroom_location. '</td>';
+        //   echo "<td><a href='update.php?id=" . $id . "&gender=" . $gender ."'>修改</a></td>";
+        //   echo "<td><a href='delete.php?id=" . $id . "'>刪除</a></td>";
           echo '</tr>';
       }
   } else {
