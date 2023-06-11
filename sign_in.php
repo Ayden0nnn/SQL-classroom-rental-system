@@ -45,7 +45,7 @@ if($row['User_pwd'] != $user_pwd){
 
 if($row['User_type'] == 'ST'){
     mysqli_stmt_close($stmt);
-    header("Location: user.php"); 
+    header("Location: user.php?ID=$user_account"); 
 }else{
     mysqli_stmt_close($stmt);
     header("Location: admin.php"); 
