@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>classroom arrangement - home</title>
+    <title>classroom arrangement - user_home</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" >
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
@@ -59,14 +59,14 @@
 
 <body>
     <div class="topnav">
-        <a class="active" href="home.php">Home</a>
-        <a href="sign_in.html">sign in</a>
-        <a href="sign_up.html">sign up</a>
+        <a class="active" href="user.php">教室資訊</a>
+        <a href="user_reservation.php">教室借閱紀錄查詢</a>
+        <a href="user_info.php">使用者資訊</a>
     </div>
     <br><br>
     <div id = "root"><div>
         <h1 style="text-align:center;">Classroom Reservation</h1>
-        <h2 style="text-align:center;">查詢教室資訊</h2>   
+        <h2 style="text-align:center;">教室資訊</h2>   
         <div class="text-center">
         <a class="button" id="toggleButton1" onclick="toggleTable(1)">編號排序</a>
         <a class="button" id="toggleButton2" onclick="toggleTable(2)">容量排序</a>

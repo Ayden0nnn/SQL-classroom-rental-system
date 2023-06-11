@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>classroom arrangement - home</title>
+    <title>classroom arrangement - user_home</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" >
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
@@ -59,17 +59,19 @@
 
 <body>
     <div class="topnav">
-        <a class="active" href="home.php">Home</a>
-        <a href="sign_in.html">sign in</a>
-        <a href="sign_up.html">sign up</a>
+        <a href="user.php">教室資訊</a>
+        <a class="active" href="user_reservation.php">教室借閱紀錄查詢</a>
+        <a href="user_info.php">使用者資訊</a>
     </div>
     <br><br>
     <div id = "root"><div>
         <h1 style="text-align:center;">Classroom Reservation</h1>
-        <h2 style="text-align:center;">查詢教室資訊</h2>   
+        <h2 style="text-align:center;">教室借閱紀錄查詢</h2>   
         <div class="text-center">
-        <a class="button" id="toggleButton1" onclick="toggleTable(1)">編號排序</a>
-        <a class="button" id="toggleButton2" onclick="toggleTable(2)">容量排序</a>
+        <a class="button">預約教室</a>
+        <a class="button" id="toggleButton1" onclick="toggleTable(1)">查看已預約教室</a>
+        <a class="button" id="toggleButton2" onclick="toggleTable(2)">查看借用紀錄</a>
+        
         <?php
   // ******** update your personal settings ********
   $servername = '140.122.184.125:3307';
@@ -92,31 +94,33 @@
   }
 
   // ******** update your personal settings ********
-  $sql = 'SELECT * FROM classroom'; // set up your sql query
+  $sql = 'SELECT * FROM reservation_time natural join classroom'; // set up your sql query
   $result = $conn->query($sql); // Send SQL Query
 
   if ($result->num_rows > 0) {
       echo '<table style="width:50%" align="center">';
       echo '<tr>';
-      echo '<th>id</th>';
-      echo '<th>Name</th>';
-      echo '<th>capacity</th>';
-      echo '<th>equipment</th>';
-      echo '<th colspan="2">location</th>';
+      echo '<th>學號</th>';
+      echo '<th>教室名稱</th>';
+      echo '<th>年</th>';
+      echo '<th>月</th>';
+      echo '<th>日</th>';
       echo '</tr>';
       while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
           // Process the Result here , need to modify.
-          $Classroom_id = $row['Classroom_id'];
-          $Classroom_name = $row['Classroom_name'];
-          $Classroom_capacity= $row['Classroom_capacity'];
-		  $Classroom_equipment = $row['Classroom_equipment'];
-		  $Classroom_location = $row['Classroom_location'];
+          $Re_id = $row['Re_id'];
+          $User_id = $row['User_id'];
+          $Classroom_id= $row['Classroom_id'];
+          $Classroom_name= $row['Classroom_name'];
+		  $Res_year = $row['Res_year'];
+		  $Res_month = $row['Res_month'];
+		  $Res_day = $row['Res_day'];
           echo '<tr id="myTable" class="table-row1 hidden">';
-          echo '<td>' . $Classroom_id . '</td>';
+          echo '<td>' . $User_id . '</td>';
           echo '<td>' . $Classroom_name . '</td>';
-          echo '<td>' . $Classroom_capacity . '</td>';
-          echo '<td>' . $Classroom_equipment . '</td>';
-          echo '<td>' . $Classroom_location. '</td>';
+          echo '<td>' . $Res_year . '</td>';
+          echo '<td>' . $Res_month . '</td>';
+          echo '<td>' . $Res_day. '</td>';
         //   echo "<td><a href='update.php?id=" . $id . "&gender=" . $gender ."'>修改</a></td>";
         //   echo "<td><a href='delete.php?id=" . $id . "'>刪除</a></td>";
           echo '</tr>';
@@ -126,23 +130,25 @@
       echo '0 results';
   }
 
-  $sql = 'SELECT * FROM classroom order by Classroom_capacity desc'; // set up your sql query
+  $sql = 'SELECT * FROM reservation_time natural join classroom where User_id = "40971227H"'; // set up your sql query
   $result = $conn->query($sql); // Send SQL Query
 
   if ($result->num_rows > 0) {
       while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
           // Process the Result here , need to modify.
-          $Classroom_id = $row['Classroom_id'];
-          $Classroom_name = $row['Classroom_name'];
-          $Classroom_capacity= $row['Classroom_capacity'];
-		  $Classroom_equipment = $row['Classroom_equipment'];
-		  $Classroom_location = $row['Classroom_location'];
+          $Re_id = $row['Re_id'];
+          $User_id = $row['User_id'];
+          $Classroom_id= $row['Classroom_id'];
+          $Classroom_name= $row['Classroom_name'];
+		  $Res_year = $row['Res_year'];
+		  $Res_month = $row['Res_month'];
+		  $Res_day = $row['Res_day'];
           echo '<tr id="myTable" class="table-row2 hidden">';
-          echo '<td>' . $Classroom_id . '</td>';
+          echo '<td>' . $User_id . '</td>';
           echo '<td>' . $Classroom_name . '</td>';
-          echo '<td>' . $Classroom_capacity . '</td>';
-          echo '<td>' . $Classroom_equipment . '</td>';
-          echo '<td>' . $Classroom_location. '</td>';
+          echo '<td>' . $Res_year . '</td>';
+          echo '<td>' . $Res_month . '</td>';
+          echo '<td>' . $Res_day. '</td>';
         //   echo "<td><a href='update.php?id=" . $id . "&gender=" . $gender ."'>修改</a></td>";
         //   echo "<td><a href='delete.php?id=" . $id . "'>刪除</a></td>";
           echo '</tr>';
@@ -193,6 +199,8 @@
     }
 
 </script>
-</div>
+
+    </div>
+   
 </body>
 </html>
