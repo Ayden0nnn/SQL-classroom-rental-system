@@ -84,7 +84,7 @@
             }
             
             //check phone
-            if(strlen( $string ) != 10){
+            if(strlen( $user_phone ) != 10){
                 echo '手機格式不正確';
                 exit();
             }
@@ -105,3 +105,4 @@
 
     //show up sign_up successed
     echo '註冊成功';
+    echo '<a href="home.php">首頁</a>';

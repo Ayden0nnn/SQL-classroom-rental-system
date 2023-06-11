@@ -56,17 +56,16 @@
 
 <body>
     <div class="topnav">
-        <a class="active" href="user.php">教室資訊</a>
+        <a  href="user.php">教室資訊</a>
         <a href="user_reservation.php">教室借閱紀錄查詢</a>
-        <a href="user_info.php">使用者資訊</a>
+        <a class="active" href="user_info.php">使用者資訊</a>
     </div>
     <br><br>
     <div id = "root"><div>
-        <h2 style="text-align:center;">教室借閱紀錄查詢</h2>   
+        <h2 style="text-align:center;">使用者資訊</h2>   
         <div class="text-center">
-        <a class="button" href="預約教室html">預約教室</a>
-        <a class="button" href="查看已預約教室html">查看已預約教室</a>
-        <a class="button" href="查看借用紀錄html">查看借用紀錄</a>
+        <a class="button">查看使用者資訊</a>
+        <a class="button">修改使用者資訊</a>
         <?php
         // ******** update your personal settings ********
         $servername = '140.122.184.125:3307';
@@ -189,14 +188,7 @@
                 }
             }
 
-        </script>
-                <br><br><br><br>
-        <h2 style="text-align:center;">教室借閱紀錄查詢</h2>   
-        <div class="text-center">
-        <a class="button" href="預約教室html">預約教室</a>
-        <a class="button" href="查看已預約教室html">查看已預約教室</a>
-        <a class="button" href="查看借用紀錄html">查看借用紀錄</a>
-        
+        </script> 
     </div>
    
 </body>

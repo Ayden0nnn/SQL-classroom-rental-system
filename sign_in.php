@@ -45,10 +45,10 @@ if($row['User_pwd'] != $user_pwd){
 
 if($row['User_type'] == 'ST'){
     mysqli_stmt_close($stmt);
-    header("Location: user.html"); 
+    header("Location: user.php"); 
 }else{
     mysqli_stmt_close($stmt);
-    header("Location: admin.html"); 
+    header("Location: admin.php"); 
 }
 
 
