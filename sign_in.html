@@ -61,16 +61,18 @@
     <a class="active" href="sign_in.html">sign in</a>
     <a href="sign_up.html">sign up</a>
   </div>
-    <form action="/action_page.php">
+    <form action="sign_in.php" method="post">
         <fieldset>
           <br><br>
           <div class="text-center">
           <legend>登入:</legend>
-          <label for="fname">First name:</label><br>
-          <input type="text" id="fname" name="fname"><br>
-          <label for="lname">Last name:</label><br>
-          <input type="text" id="lname" name="lname"><br><br>
-          <a class="button" input type="submit" value="Submit">登入</a>
+          <label for="fname">StudentID:</label><br>
+          <input type="text" id="ID" name="ID"><br>
+
+          <label for="lname">Password:</label><br>
+          <input type="text" id="pwd" name="pwd"><br><br>
+
+          <input class="button" type="submit" value="登入">
           </div>
           
         </fieldset>
