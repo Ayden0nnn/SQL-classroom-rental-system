@@ -21,11 +21,12 @@ if ($conn->connect_error) {
 
 $id = $_GET['id'];
 
+
 if (isset($id)) {
-    $delete_sql = "DELETE FROM student where id = $id"; // TODO
+    $delete_sql = "DELETE FROM users where User_id = '$id'"; // TODO
 
     if ($conn->query($delete_sql) === true) {
-        echo "刪除成功!<a href='index.php'>返回主頁</a>";
+        echo "刪除成功!<a href='admin_user.php'>返回主頁</a>";
     } else {
         echo '刪除失敗!';
     }
