@@ -8,12 +8,13 @@
         $cname = $_POST['cname'];
         $cc= $_POST['cc'];
         $lo= $_POST['lo'];
+        $cid = $_POST['cid'];
 
         
 
         if(isset($_POST['eq'])){
             $eq = $_POST['eq'];
-            $update=  "UPDATE classroom SET Classroom_name='$cname', Classroom_capacity='$cc', Classroom_equipment='$eq', Classroom_location = '$lo' WHERE Classroom_id='$cid'";
+            $update=  "UPDATE classroom SET Classroom_name='$cname', Classroom_capacity='$cc', Classroom_equipment = '$eq', Classroom_location = '$lo' WHERE Classroom_id='$cid'";
         }else{
 
             $update=  "UPDATE classroom SET Classroom_name='$cname', Classroom_capacity='$cc', Classroom_location = '$lo' WHERE Classroom_id='$cid' ";
