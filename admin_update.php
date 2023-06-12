@@ -89,16 +89,16 @@ if(mysqli_num_rows($result) > 0){
           <br>
           <div class="text-center">
           <label for="fname">Classroom_name:</label><br>
-          <input type="text" id="rname" name="rname" placeholder="<?php echo $row['Classroom_name'];?>" ><br>
+          <input type="text" id="rname" name="rname" value="<?php echo $row['Classroom_name'];?>" ><br>
         
           <label for="lname">year:</label><br>
-          <input type="text" id="ryear" name="ryear" placeholder="<?php echo $row['Res_year'];?>"><br>
+          <input type="text" id="ryear" name="ryear" value="<?php echo $row['Res_year'];?>"><br>
 
           <label for="lname">month:</label><br>
-          <input type="text" id="rmonth" name="rmonth" placeholder="<?php echo $row['Res_month'];?>"><br>
+          <input type="text" id="rmonth" name="rmonth" value="<?php echo $row['Res_month'];?>"><br>
 
           <label for="lname">day:</label><br>
-          <input type="text" id="rday" name="rday" placeholder="<?php echo $row['Res_day'];?>"><br>
+          <input type="text" id="rday" name="rday" value="<?php echo $row['Res_day'];?>"><br>
 
           <input class="button" type="submit" value="修改" >
           </div>

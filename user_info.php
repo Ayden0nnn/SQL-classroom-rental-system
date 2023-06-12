@@ -51,6 +51,9 @@
           .button:hover {
             background-color: #c2c7c7;
           }
+          .hidden {
+            display: none;
+        }
     </style>
 </head>
 
@@ -66,8 +69,8 @@
     <div id = "root"><div>
         <h2 style="text-align:center;">使用者資訊</h2>   
         <div class="text-center">
-        <a class="button">查看使用者資訊</a>
-        <a class="button">修改使用者資訊</a>
+        <a class="button" id="toggleButton1" onclick="toggleTable(1)">查看使用者資訊</a>
+        <a class="button" id="toggleButton2" onclick="toggleTable(2)">修改使用者資訊</a>
         <?php
         // ******** update your personal settings ********
         $servername = '140.122.184.125:3307';
@@ -90,67 +93,64 @@
         }
         $User_id= $_GET['ID'];
         // ******** update your personal settings ********
-        $sql = 'SELECT * FROM classroom'; // set up your sql query
-        $result = $conn->query($sql); // Send SQL Query
+        $sql = 'SELECT * FROM users where User_id = ?'; // set up your sql query
+        $stmt = mysqli_prepare($conn, $sql);
+        mysqli_stmt_bind_param($stmt, "s", $User_id);
+        mysqli_stmt_execute($stmt);
+        $result = mysqli_stmt_get_result($stmt);
 
         if ($result->num_rows > 0) {
-            echo '<table style="width:50%" align="center">';
-            echo '<tr>';
-            echo '<th>id</th>';
-            echo '<th>Name</th>';
-            echo '<th>capacity</th>';
-            echo '<th>equipment</th>';
-            echo '<th colspan="2">location</th>';
-            echo '</tr>';
             while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
                 // Process the Result here , need to modify.
-                $Classroom_id = $row['Classroom_id'];
-                $Classroom_name = $row['Classroom_name'];
-                $Classroom_capacity= $row['Classroom_capacity'];
-                $Classroom_equipment = $row['Classroom_equipment'];
-                $Classroom_location = $row['Classroom_location'];
-                echo '<tr id="myTable" class="table-row1 hidden">';
-                echo '<td>' . $Classroom_id . '</td>';
-                echo '<td>' . $Classroom_name . '</td>';
-                echo '<td>' . $Classroom_capacity . '</td>';
-                echo '<td>' . $Classroom_equipment . '</td>';
-                echo '<td>' . $Classroom_location. '</td>';
-                //   echo "<td><a href='update.php?id=" . $id . "&gender=" . $gender ."'>修改</a></td>";
-                //   echo "<td><a href='delete.php?id=" . $id . "'>刪除</a></td>";
+                $User_id = $row['User_id'];
+                $User_name = $row['User_name'];
+                $User_phone= $row['User_phone'];
+                $User_pwd = $row['User_pwd'];
+                echo '<table width="500" border="1" align="center" class="table-row1 hidden" id="myTable">';
+                echo '<tr>';
+                echo '<th>學號</th>';
+                echo '<td bgcolor="#FFFFFF">' . $User_id . '</td>';
                 echo '</tr>';
-
+                echo '<tr>';
+                echo '<th>姓名</th>';
+                echo '<td bgcolor="#FFFFFF">' . $User_name . '</td>';
+                echo '</tr>';
+                echo '<tr>';
+                echo '<th>電話</th>';
+                echo '<td bgcolor="#FFFFFF">' . $User_phone . '</td>';
+                echo '</tr>';
+                echo '</table>';
+               
             }
         } else {
             echo '0 results';
         }
 
-        $sql = 'SELECT * FROM classroom order by Classroom_capacity desc'; // set up your sql query
-        $result = $conn->query($sql); // Send SQL Query
+        $sql = 'SELECT * FROM users where User_id = ?'; // set up your sql query
+        $stmt = mysqli_prepare($conn, $sql);
+        mysqli_stmt_bind_param($stmt, "s", $User_id);
+        mysqli_stmt_execute($stmt);
+        $result = mysqli_stmt_get_result($stmt);
 
-        if ($result->num_rows > 0) {
-            while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
-                // Process the Result here , need to modify.
-                $Classroom_id = $row['Classroom_id'];
-                $Classroom_name = $row['Classroom_name'];
-                $Classroom_capacity= $row['Classroom_capacity'];
-                $Classroom_equipment = $row['Classroom_equipment'];
-                $Classroom_location = $row['Classroom_location'];
-                echo '<tr id="myTable" class="table-row2 hidden">';
-                echo '<td>' . $Classroom_id . '</td>';
-                echo '<td>' . $Classroom_name . '</td>';
-                echo '<td>' . $Classroom_capacity . '</td>';
-                echo '<td>' . $Classroom_equipment . '</td>';
-                echo '<td>' . $Classroom_location. '</td>';
-                //   echo "<td><a href='update.php?id=" . $id . "&gender=" . $gender ."'>修改</a></td>";
-                //   echo "<td><a href='delete.php?id=" . $id . "'>刪除</a></td>";
-                echo '</tr>';
-
-            }
-        } else {
-            echo '0 results';
-        }
         ?>
+        <form action="user_info_doupdate.php" class="table-row2 hidden" method="POST">
+        <fieldset>
+            <br>
+            <div class="text-center">
+            <label for="fname">學號</label><br>
+            <input type="text" id="uid" name="uid" value="<?php echo $User_id; ?>"><br>
+            <label for="lname">姓名</label><br>
+            <input type="text" id="uname" name="uname" value="<?php echo $User_name; ?>"><br>
+            <label for="lname">電話</label><br>
+            <input type="text" id="uphone" name="uphone" value="<?php echo $User_phone; ?>"><br>
+            <label for="lname">密碼</label><br>
+            <input type="text" id="upwd" name="upwd" value="<?php echo $User_pwd; ?>"><br>
+            <input class="button" type="submit" value="修改">
             </div>
+        </fieldset>
+        </form>
+
+        </div>
         <script>
             var isButton1Clicked = false;
             var isButton2Clicked = false;
