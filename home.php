@@ -154,9 +154,12 @@
   ?>
     </div>
 <script>
-    var isButton1Clicked = false;
+    var isButton1Clicked = true;
     var isButton2Clicked = false;
-
+    var tableRows1 = document.querySelectorAll(".table-row1");
+            tableRows1.forEach(function(row) {
+                row.classList.remove("hidden");
+            });
     function toggleTable(buttonId) {
         var button1 = document.getElementById("toggleButton1");
         var button2 = document.getElementById("toggleButton2");

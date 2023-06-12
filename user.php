@@ -88,6 +88,7 @@
   // Connect MySQL server
   $conn = new mysqli($servername, $username, $password, $dbname);
 
+
   // set up char set
   if (!$conn->set_charset('utf8')) {
       printf("Error loading character set utf8: %s\n", $conn->error);
@@ -98,6 +99,7 @@
   if ($conn->connect_error) {
       die('Connection failed: ' . $conn->connect_error);
   }
+
 
   // ******** update your personal settings ********
   $sql = 'SELECT * FROM classroom'; // set up your sql query
@@ -162,8 +164,12 @@
   ?>
     </div>
 <script>
-    var isButton1Clicked = false;
+    var isButton1Clicked = true;
     var isButton2Clicked = false;
+    var tableRows1 = document.querySelectorAll(".table-row1");
+            tableRows1.forEach(function(row) {
+                row.classList.remove("hidden");
+            });
 
     function toggleTable(buttonId) {
         var button1 = document.getElementById("toggleButton1");

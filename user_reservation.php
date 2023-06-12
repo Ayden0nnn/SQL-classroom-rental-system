@@ -62,16 +62,44 @@
         <a href="user.php">教室資訊</a>
         <a class="active" href="user_reservation.php">教室借閱紀錄查詢</a>
         <a href="user_info.php">使用者資訊</a>
+        <a href="home.php" class="text-center">log out</a>
     </div>
     <br><br>
     <div id = "root"><div>
         <h1 style="text-align:center;">Classroom Reservation</h1>
         <h2 style="text-align:center;">教室借閱紀錄查詢</h2>   
         <div class="text-center">
-        <a class="button">預約教室</a>
+        <a class="button" id="toggleButton0" onclick="toggleTable(0)">預約教室</a>
         <a class="button" id="toggleButton1" onclick="toggleTable(1)">查看已預約教室</a>
         <a class="button" id="toggleButton2" onclick="toggleTable(2)">查看借用紀錄</a>
-        
+        <!-- <h1 align="center">新增學生資料</h1> -->
+    <form action="create.php" method="post">
+      <table width="500" border="1"  align="center" id="myTable" class="table-row0 hidden">
+        <tr>
+          <th>學號</th>
+          <td bgcolor="#FFFFFF"><input type="text" name="User_id" /></td>
+        </tr>
+        <tr>
+          <th>教室ID</th>
+          <td bgcolor="#FFFFFF"><input type="text" name="Classroom_id" /></td>
+        </tr>
+        <tr>
+          <th>年</th>
+          <td bgcolor="#FFFFFF"><input type="text" name="Res_year" /></td>
+        </tr>
+        <tr>
+          <th>月</th>
+          <td bgcolor="#FFFFFF"><input type="text" name="Res_month" /></td>
+        </tr>
+        <tr>
+          <th>日</th>
+          <td bgcolor="#FFFFFF"><input type="text" name="Res_day" /></td>
+        </tr>
+        <tr>
+          <th colspan="2"><input class="button" type="submit" border="none" value="新增" /></th>
+        </tr>
+      </table>
+    </form>
         <?php
   // ******** update your personal settings ********
   $servername = '140.122.184.125:3307';
@@ -92,13 +120,12 @@
   if ($conn->connect_error) {
       die('Connection failed: ' . $conn->connect_error);
   }
-
   // ******** update your personal settings ********
-  $sql = 'SELECT * FROM reservation_time natural join classroom'; // set up your sql query
+  $sql = 'SELECT * FROM reservation_time natural join classroom order by Re_id desc'; // set up your sql query
   $result = $conn->query($sql); // Send SQL Query
 
   if ($result->num_rows > 0) {
-      echo '<table style="width:50%" align="center">';
+      echo '<table style="width:50%" align="center" class="table-row1 hidden">';
       echo '<tr>';
       echo '<th>學號</th>';
       echo '<th>教室名稱</th>';
@@ -134,6 +161,14 @@
   $result = $conn->query($sql); // Send SQL Query
 
   if ($result->num_rows > 0) {
+      echo '<table style="width:50%" align="center" class="table-row2 hidden">';
+      echo '<tr>';
+      echo '<th>學號</th>';
+      echo '<th>教室名稱</th>';
+      echo '<th>年</th>';
+      echo '<th>月</th>';
+      echo '<th>日</th>';
+      echo '</tr>';
       while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
           // Process the Result here , need to modify.
           $Re_id = $row['Re_id'];
@@ -160,16 +195,46 @@
   ?>
     </div>
 <script>
+    var isButton0Clicked = false;
     var isButton1Clicked = false;
     var isButton2Clicked = false;
 
     function toggleTable(buttonId) {
+        var button1 = document.getElementById("toggleButton0");
         var button1 = document.getElementById("toggleButton1");
         var button2 = document.getElementById("toggleButton2");
 
-        if (buttonId === 1) {
+        if (buttonId === 0) {
+            if(isButton0Clicked == false)
+                isButton0Clicked = !isButton0Clicked;
+            if (isButton1Clicked) {
+                isButton1Clicked = false;
+                var tableRows1 = document.querySelectorAll(".table-row1");
+                tableRows1.forEach(function(row) {
+                    row.classList.add("hidden");
+                });
+            }
+            if (isButton2Clicked) {
+                isButton2Clicked = false;
+                var tableRows2 = document.querySelectorAll(".table-row2");
+                tableRows2.forEach(function(row) {
+                    row.classList.add("hidden");
+                });
+            }
+            var tableRows1 = document.querySelectorAll(".table-row0");
+            tableRows1.forEach(function(row) {
+                row.classList.remove("hidden");
+            });
+        }else if (buttonId === 1) {
             if(isButton1Clicked == false)
                 isButton1Clicked = !isButton1Clicked;
+            if (isButton0Clicked) {
+                isButton0Clicked = false;
+                var tableRows0 = document.querySelectorAll(".table-row0");
+                tableRows0.forEach(function(row) {
+                    row.classList.add("hidden");
+                });
+            }
             if (isButton2Clicked) {
                 isButton2Clicked = false;
                 var tableRows2 = document.querySelectorAll(".table-row2");
@@ -184,6 +249,13 @@
         } else if (buttonId === 2) {
             if(isButton2Clicked == false)
                 isButton2Clicked = !isButton2Clicked;
+            if (isButton0Clicked) {
+                isButton0Clicked = false;
+                var tableRows0 = document.querySelectorAll(".table-row0");
+                tableRows0.forEach(function(row) {
+                    row.classList.add("hidden");
+                });
+            }
             if (isButton1Clicked) {
                 isButton1Clicked = false;
                 var tableRows1 = document.querySelectorAll(".table-row1");

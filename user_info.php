@@ -59,6 +59,7 @@
         <a  href="user.php">教室資訊</a>
         <a href="user_reservation.php">教室借閱紀錄查詢</a>
         <a class="active" href="user_info.php">使用者資訊</a>
+        <a href="home.php" class="text-center">log out</a>
     </div>
     <br><br>
     <div id = "root"><div>
