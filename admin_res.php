@@ -64,10 +64,8 @@
     <div id = "root"><div>
         <h1 style="text-align:center;">Classroom Reservation</h1>
         <h2 style="text-align:center;">預約管理</h2>   
-        <div class="text-center">
-        <a class="button">查看預約</a>
-        <a class="button">修改預約</a>
-        <?php
+    <div class="text-center">
+<?php
   // ******** update your personal settings ********
   $servername = '140.122.184.125:3307';
   $username = 'team18';
@@ -104,24 +102,27 @@
       echo '</tr>';
       while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
           // Process the Result here , need to modify.
-          $Re_id = $row['User_id'];
+          $Re_id = $row['Re_id'];
           $User_id = $row['User_id'];
           $Classroom_id = $row['Classroom_id'];
           $Classroom_name = $row['Classroom_name'];
           $Res_year = $row['Res_year'];
 		  $Res_month = $row['Res_month'];
 		  $Res_day = $row['Res_day'];
-          echo '<tr id="myTable" class="table-row1 hidden">';
-          echo '<td>' . $Re_id . '</td>';
-          echo '<td>' . $User_id . '</td>';
-          echo '<td>' . $Classroom_name . '</td>';
-          echo '<td>' . $Res_year . '</td>';
-          echo '<td>' . $Res_month . '</td>';
-          echo '<td>' . $Res_day . '</td>';
-        //   echo "<td><a href='update.php?id=" . $id . "&gender=" . $gender ."'>修改</a></td>";
-        //   echo "<td><a href='delete.php?id=" . $id . "'>刪除</a></td>";
-          echo '</tr>';
+          ?>
 
+        <tr id="myTable" class="table-row1 hidden">
+			<td><?php echo $Re_id ; ?></td>
+            <td><?php echo $User_id ; ?></td>
+			<td><?php echo $Classroom_name; ?></td>
+			<td><?php echo  $Res_year; ?></td>
+            <td><?php echo $Res_month?></td>
+            <td><?php echo $Res_day?></td>
+			<td><a href="admin_update.php?id=<?php echo $row['User_id'];?>" class="button">修改</td>
+            <td><a href="admin_delete_res.php?id=<?php echo $row['Re_id'];?>" class="button">刪除</td>
+		</tr>
+
+<?php
       }
   } else {
       echo '0 results';
