@@ -1,3 +1,9 @@
+<?php
+    
+    require_once('connect_db.php');
+    ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -66,31 +72,12 @@
         <h2 style="text-align:center;">使用者管理</h2>   
         <div class="text-center">
         <a class="button">查看使用者</a>
-        <a class="button">刪除使用者</a>
-        <?php
+
+        
+<?php
   // ******** update your personal settings ********
-  $servername = '140.122.184.125:3307';
-  $username = 'team18';
-  $password = '0J/rLx9rOh4WhNb6';
-  $dbname = 'team18';
-
-  // Connect MySQL server
-  $conn = new mysqli($servername, $username, $password, $dbname);
-
-  // set up char set
-  if (!$conn->set_charset('utf8')) {
-      printf("Error loading character set utf8: %s\n", $conn->error);
-      exit();
-  }
-
-  // Check connection
-  if ($conn->connect_error) {
-      die('Connection failed: ' . $conn->connect_error);
-  }
-
-  // ******** update your personal settings ********
-  $sql = 'SELECT * FROM users'; // set up your sql query
-  $result = $conn->query($sql); // Send SQL Query
+  $sql = "SELECT * FROM users"; // set up your sql query
+  $result = mysqli_query($conn,$sql) ; // Send SQL Query
 
   if ($result->num_rows > 0) {
       echo '<table style="width:50%" align="center">';
@@ -106,13 +93,17 @@
           $User_type = $row['User_type'];
           $User_name = $row['User_name'];
           $User_phone= $row['User_phone'];
-          echo '<tr id="myTable" class="table-row1 hidden">';
-          echo '<td>' . $User_id . '</td>';
-          echo '<td>' . $User_type . '</td>';
-          echo '<td>' . $User_name . '</td>';
-          echo '<td>' . $User_phone . '</td>';
-        //   echo "<td><a href='update.php?id=" . $id . "&gender=" . $gender ."'>修改</a></td>";
-        //   echo "<td><a href='delete.php?id=" . $id . "'>刪除</a></td>";
+?>
+        
+		<tr id="myTable" class="table-row1 hidden">
+			<td><?php echo $User_id ; ?></td>
+			<td><?php echo $User_type; ?></td>
+			<td><?php echo $User_name ?></td>
+            <td><?php echo $User_phone?></td>
+			<td><a href="delete.php?id=<?php echo $row['User_id'];?>" class="button">刪除</td>
+		</tr>
+         
+<?php
           echo '</tr>';
 
       }
