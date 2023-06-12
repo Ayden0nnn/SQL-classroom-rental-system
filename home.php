@@ -96,7 +96,7 @@
   $result = $conn->query($sql); // Send SQL Query
 
   if ($result->num_rows > 0) {
-    echo '<table style="border-collapse: collapse; margin: 25px 0; font-size: 0.9em; font-family: sans-serif; min-width: 400px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);">';
+    echo '<table style="border-collapse: collapse; font-size: 0.9em; font-family: sans-serif; min-width: 400px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);" align="center">';
     echo '<tr>';
     echo '<th style="padding: 10px; background-color: #89b8c7ba;">教室編號</th>';
     echo '<th style="padding: 10px; background-color: #89b8c7ba;">教室名稱</th>';
@@ -117,6 +117,8 @@
         echo '<td style="padding: 10px; border: 1px solid #ddd;">' . $Classroom_capacity . '</td>';
         echo '<td style="padding: 10px; border: 1px solid #ddd; background-color: #f3f3f3;">' . $Classroom_equipment . '</td>';
         echo '<td style="padding: 10px; border: 1px solid #ddd;">' . $Classroom_location . '</td>';
+        //   echo "<td><a href='update.php?id=" . $id . "&gender=" . $gender ."'>修改</a></td>";
+        //   echo "<td><a href='delete.php?id=" . $id . "'>刪除</a></td>";
         echo '</tr>';
     }
   } else {
