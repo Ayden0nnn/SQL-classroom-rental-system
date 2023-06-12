@@ -108,11 +108,11 @@
   if ($result->num_rows > 0) {
       echo '<table style="width:50%" align="center">';
       echo '<tr>';
-      echo '<th>id</th>';
-      echo '<th>Name</th>';
-      echo '<th>capacity</th>';
-      echo '<th>equipment</th>';
-      echo '<th colspan="2">location</th>';
+      echo '<th>教室編號</th>';
+      echo '<th>教室名稱</th>';
+      echo '<th>容量</th>';
+      echo '<th>器材</th>';
+      echo '<th colspan="2">地點</th>';
       echo '</tr>';
       while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
           // Process the Result here , need to modify.

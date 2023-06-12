@@ -19,25 +19,24 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-if (isset($_POST['User_id']) && isset($_POST['Classroom_id']) && isset($_POST['Res_year']) && isset($_POST['Res_month']) && isset($_POST['Res_day'])) {
-	$User_id = $_POST['User_id'];
-	$Classroom_id = $_POST['Classroom_id'];
-	$Res_year = $_POST['Res_year'];
-	$Res_month = $_POST['Res_month'];
-	$Res_day = $_POST['Res_day'];
+if (isset($_POST['Classroom_name']) && isset($_POST['Classroom_capacity']) && isset($_POST['Classroom_equipment']) && isset($_POST['Classroom_location'])) {
+	$Classroom_name = $_POST['Classroom_name'];
+	$Classroom_capacity = $_POST['Classroom_capacity'];
+	$Classroom_equipment = $_POST['Classroom_equipment'];
+	$Classroom_location = $_POST['Classroom_location'];
 
 
-	$maxIdQuery = "SELECT MAX(Re_id) as maxId FROM reservation_time";
+	$maxIdQuery = "SELECT MAX(Classroom_id) as maxId FROM classroom";
     $result = $conn->query($maxIdQuery);
     $row = $result->fetch_assoc();
     $maxId = $row['maxId'];
     $newId = $maxId + 1;
 
 	
-	$insert_sql = "insert into reservation_time (Re_id, User_id, Classroom_id, Res_year, Res_month, Res_day) value ('$newId', '$User_id', '$Classroom_id', '$Res_year', '$Res_month', '$Res_day')";	// TODO
+	$insert_sql = "insert into classroom (Classroom_id, Classroom_name, Classroom_capacity, Classroom_equipment, Classroom_location) value ('$newId', '$Classroom_name', '$Classroom_capacity', '$Classroom_equipment', '$Classroom_location')";	// TODO
 	
 	if ($conn->query($insert_sql) === TRUE) {
-		echo "新增成功!!<br> <a href='user.php'>返回主頁</a>";
+		echo "新增成功!!<br> <a href='admin.php'>返回主頁</a>";
 	} else {
 		echo "<h2 align='center'><font color='antiquewith'>新增失敗!!</font></h2>";
 	}
