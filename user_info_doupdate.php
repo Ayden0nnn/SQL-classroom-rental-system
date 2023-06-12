@@ -30,11 +30,12 @@
         $update_sql = "UPDATE users SET User_id='$uid', User_name='$uname', User_phone='$uphone', User_pwd='$upwd' WHERE User_id='$uid'"; // TODO
         $query_run2 = mysqli_query($conn,$update_sql);
         if ($query_run2) {
-            header("Location: user_info.php?ID=$uid");
-            echo "修改成功!!<br> <a href='user.php'>返回主頁</a>";
-            exit();
+            echo "<script>alert('新增成功');</script>";
+    	    echo "<script>window.location.href='user_info.php?ID=$uid';</script>";
         } else {
             echo "<h2 align='center'><font color='antiquewith'>修改失敗!!</font></h2>";
+    		echo "<br> <a href='user.php'>返回主頁</a>";
+
         }
        //check classroom exist
 

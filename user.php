@@ -66,7 +66,7 @@
         <a href="user_reservation.php" id="reservationLink">教室借閱紀錄查詢</a>
         <a href="user_info.php" id="infoLink">使用者資訊</a>
 
-        <a href="home.php" class="text-center">log out</a>
+        <a href="home.php" class="text-center">登出</a>
         <!--  ID -->
         <a class="white text-center"><?php echo $_GET["ID"] ?></a>
         

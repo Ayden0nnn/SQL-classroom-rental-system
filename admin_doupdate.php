@@ -12,8 +12,8 @@
         $select = "SELECT * FROM reservation_time as r, classroom as c WHERE c.Classroom_name = '$rname';"; 
         $result = mysqli_query($conn,$select);
         if( mysqli_num_rows($result) <= 0){
-            echo '沒有這間教室喔';
-            exit();
+            echo "<script>alert('沒有這間教室喔');</script>";
+		echo "<script>window.location.href='admin_res.php;</script>";
         }
 
         $row = mysqli_fetch_assoc ( $result );

@@ -35,12 +35,13 @@ if (isset($_POST['Classroom_name']) && isset($_POST['Classroom_capacity']) && is
 	
 	$insert_sql = "insert into classroom (Classroom_id, Classroom_name, Classroom_capacity, Classroom_equipment, Classroom_location) value ('$newId', '$Classroom_name', '$Classroom_capacity', '$Classroom_equipment', '$Classroom_location')";	// TODO
 	
-	if ($conn->query($insert_sql) === TRUE) {
-		echo "新增成功!!<br> <a href='admin.php'>返回主頁</a>";
-	} else {
-		echo "<h2 align='center'><font color='antiquewith'>新增失敗!!</font></h2>";
-	}
-
+	if ($conn->query($insert_sql) === true) {
+        echo "<script>alert('新增成功');</script>";
+        echo "<script>window.location.href='admin.php';</script>";
+    } else {
+        echo "<h2 align='center'><font color='antiquewith'>新增失敗!!</font></h2>";
+		echo "<br> <a href='admin.php'>返回主頁</a>";
+    }
 }else{
 	echo "資料不完全";
 }

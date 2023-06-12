@@ -62,7 +62,7 @@
         <a href="user.php" id="userLink">教室資訊</a>
         <a class="active" href="user_reservation.php" id="reservationLink">教室借閱紀錄查詢</a>
         <a href="user_info.php" id="infoLink">使用者資訊</a>
-        <a href="home.php" class="text-center">log out</a>
+        <a href="home.php" class="text-center">登出</a>
         <a class="white text-center"><?php echo $_GET["ID"] ?></a>
     </div>
     <br><br>
@@ -74,11 +74,11 @@
         <a class="button" id="toggleButton1" onclick="toggleTable(1)">查看已預約教室</a>
         <a class="button" id="toggleButton2" onclick="toggleTable(2)">查看借用紀錄</a>
         <!-- <h1 align="center">新增學生資料</h1> -->
-    <form action="create.php" method="post">
+    <form action="create_res.php" method="post">
       <table width="500" border="1"  align="center" id="myTable" class="table-row0 hidden">
         <tr>
           <th>學號</th>
-          <td bgcolor="#FFFFFF"><input type="text" name="User_id" /></td>
+          <td bgcolor="#FFFFFF"><input type="text" name="User_id" value="<?php echo $_GET["ID"]; ?>" readonly/></td>
         </tr>
         <tr>
           <th>教室ID</th>
@@ -159,6 +159,7 @@
   } else {
       echo '0 results';
   }
+  $User_id= $_GET['ID'];
 
   $sql = 'SELECT * FROM reservation_time natural join classroom where User_id = ?'; // set up your sql query
   $stmt = mysqli_prepare($conn, $sql);
@@ -199,6 +200,8 @@
   } else {
       echo '0 results';
   }
+  $User_id= $_GET['ID'];
+
   ?>
     </div>
 <script>

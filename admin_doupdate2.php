@@ -10,8 +10,10 @@
     $update_sql = "UPDATE reservation_time SET Classroom_id='$cid', Res_year='$ryear', Res_month='$rmonth', Res_day='$rday' WHERE Re_id='$rid'"; // TODO
     $query_run2 = mysqli_query($conn,$update_sql);
     if ($query_run2) {
-        echo "修改成功!!<br> <a href='admin_res.php'>返回主頁</a>";
+        echo "<script>alert('修改成功');</script>";
+        echo "<script>window.location.href='admin_res.php';</script>";
     } else {
         echo "<h2 align='center'><font color='antiquewith'>修改失敗!!</font></h2>";
+		echo "<br> <a href='admin_res.php'>返回主頁</a>";
     }
     ?>

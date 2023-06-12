@@ -62,7 +62,7 @@
         <a href="user.php" id="userLink">教室資訊</a>
         <a href="user_reservation.php" id="reservationLink">教室借閱紀錄查詢</a>
         <a class="active" href="user_info.php" id="infoLink">使用者資訊</a>
-        <a href="home.php" class="text-center">log out</a>
+        <a href="home.php" class="text-center">登出</a>
         <a class="white text-center"><?php echo $_GET["ID"] ?></a>
     </div>
     <br><br>
@@ -138,7 +138,7 @@
             <br>
             <div class="text-center">
             <label for="fname">學號</label><br>
-            <input type="text" id="uid" name="uid" value="<?php echo $User_id; ?>"><br>
+            <input type="text" id="uid" name="uid" value="<?php echo $User_id; ?>" readonly><br>
             <label for="lname">姓名</label><br>
             <input type="text" id="uname" name="uname" value="<?php echo $User_name; ?>"><br>
             <label for="lname">電話</label><br>

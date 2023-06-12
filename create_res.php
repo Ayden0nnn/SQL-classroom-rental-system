@@ -33,13 +33,21 @@ if (isset($_POST['User_id']) && isset($_POST['Classroom_id']) && isset($_POST['R
     $maxId = $row['maxId'];
     $newId = $maxId + 1;
 
+	$select = "SELECT * FROM reservation_time as r, classroom as c WHERE c.Classroom_id = '$Classroom_id';"; 
+	$result = mysqli_query($conn,$select);
+	if( mysqli_num_rows($result) <= 0){
+		echo "<script>alert('沒有這間教室喔');</script>";
+		echo "<script>window.location.href='user_reservation.php?ID=$User_id';</script>";
+	}
 	
 	$insert_sql = "insert into reservation_time (Re_id, User_id, Classroom_id, Res_year, Res_month, Res_day) value ('$newId', '$User_id', '$Classroom_id', '$Res_year', '$Res_month', '$Res_day')";	// TODO
 	
 	if ($conn->query($insert_sql) === TRUE) {
-		echo "新增成功!!<br> <a href='user.php'>返回主頁</a>";
+		echo "<script>alert('新增成功');</script>";
+    	echo "<script>window.location.href='user_reservation.php?ID=$User_id';</script>";
 	} else {
 		echo "<h2 align='center'><font color='antiquewith'>新增失敗!!</font></h2>";
+		echo "<br> <a href='user.php'>返回主頁</a>";
 	}
 
 }else{
