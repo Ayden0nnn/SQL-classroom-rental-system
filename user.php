@@ -62,9 +62,9 @@
 
 <body>
     <div class="topnav">
-        <a class="active" href="user.php">教室資訊</a>
-        <a href="user_reservation.php">教室借閱紀錄查詢</a>
-        <a href="user_info.php">使用者資訊</a>
+        <a class="active" href="user.php" id="userLink">教室資訊</a>
+        <a href="user_reservation.php" id="reservationLink">教室借閱紀錄查詢</a>
+        <a href="user_info.php" id="infoLink">使用者資訊</a>
 
         <a href="home.php" class="text-center">log out</a>
         <!--  ID -->
@@ -99,8 +99,8 @@
   if ($conn->connect_error) {
       die('Connection failed: ' . $conn->connect_error);
   }
-
-
+  $User_id= $_GET['ID'];
+//   header("Location: user_reservation.php?ID=$User_id");
   // ******** update your personal settings ********
   $sql = 'SELECT * FROM classroom'; // set up your sql query
   $result = $conn->query($sql); // Send SQL Query
@@ -205,7 +205,26 @@
             });
         }
     }
+    var userLink = document.getElementById("userLink");
+    userLink.addEventListener("click", function(event) {
+    event.preventDefault(); 
+    var userAccount = "<?php echo $User_id; ?>";
+    window.location.href = "user.php?ID=" + userAccount;
+    });
 
+    var reservationLink = document.getElementById("reservationLink");
+    reservationLink.addEventListener("click", function(event) {
+    event.preventDefault();
+    var userAccount = "<?php echo $User_id; ?>";
+    window.location.href = "user_reservation.php?ID=" + userAccount;
+    });
+
+    var infoLink = document.getElementById("infoLink");
+    infoLink.addEventListener("click", function(event) {
+    event.preventDefault(); 
+    var userAccount = "<?php echo $User_id; ?>";
+    window.location.href = "user_info.php?ID=" + userAccount;
+    });
 </script>
 </div>
 </body>
