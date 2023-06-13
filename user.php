@@ -108,7 +108,7 @@
   if ($result->num_rows > 0) {
       echo '<table style="border-collapse: collapse; font-size: 0.9em; font-family: sans-serif; min-width: 400px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);" align="center" margin: 20px;>';
     echo '<tr>';
-     cho '<th style="padding: 10px; background-color: #89b8c7ba;">教室編號</th>';
+     echo '<th style="padding: 10px; background-color: #89b8c7ba;">教室編號</th>';
     echo '<th style="padding: 10px; background-color: #89b8c7ba;">教室名稱</th>';
     echo '<th style="padding: 10px; background-color: #89b8c7ba;">容量</th>';
     echo '<th style="padding: 10px; background-color: #89b8c7ba;">器材</th>';
