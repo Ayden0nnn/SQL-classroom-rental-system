@@ -69,6 +69,13 @@ if(mysqli_num_rows($result) > 0){
           .button:hover {
             background-color: #c2c7c7;
           }
+	  
+	  input[type="text"] {
+             border-radius: 4px;
+             border: 1px solid #ccc;
+             box-sizing: border-box;
+           }
+	    
     </style>
 </head>
 
