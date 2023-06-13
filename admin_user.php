@@ -82,10 +82,10 @@
   if ($result->num_rows > 0) {
       echo '<table style="width:50%" align="center">';
       echo '<tr>';
-      echo '<th>Id</th>';
-      echo '<th>type</th>';
-      echo '<th>Name</th>';
-      echo '<th>Phone</th>';
+      echo '<th>學號</th>';
+      echo '<th>身分</th>';
+      echo '<th>姓名</th>';
+      echo '<th>手機</th>';
       echo '</tr>';
       while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
           // Process the Result here , need to modify.

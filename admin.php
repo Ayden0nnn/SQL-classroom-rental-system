@@ -95,11 +95,12 @@
   if ($result->num_rows > 0) {
     echo '<table style="width:50%" align="center">';
     echo '<tr>';
-    echo '<th>Name</th>';
-    echo '<th>capacity</th>';
-    echo '<th>equipment</th>';
-    echo '<th colspan="2">location</th>';
-    echo '<th colspan="2">action</th>';
+    echo '<th>教室編號</th>';
+    echo '<th>教室名稱</th>';
+    echo '<th>容量</th>';
+    echo '<th>器材</th>';
+    echo '<th colspan="2">地點</th>';
+    echo '<th colspan="2">修改/刪除</th>';
     echo '</tr>';
    
       while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
@@ -113,13 +114,13 @@
 ?>
    
         <tr id="myTable" class="table-row1 hidden">
-			
+            <td><?php echo $Classroom_id; ?></td>
 			<td><?php echo $Classroom_name; ?></td>
 			<td><?php echo $Classroom_capacity ?></td>
             <td><?php echo $Classroom_equipment?></td>
             <td colspan="2"><?php echo $Classroom_location?></td>
-			<td><a href="admin_class_delete.php?id=<?php echo $row['Classroom_id'];?>" class="button">刪除</td>
             <td><a href="admin_class_update.php?id=<?php echo $row['Classroom_id'];?>" class="button">修改</td>
+			<td><a href="admin_class_delete.php?id=<?php echo $row['Classroom_id'];?>" class="button">刪除</td>
 		</tr>
    
         

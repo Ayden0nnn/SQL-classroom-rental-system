@@ -4,8 +4,7 @@
 
     if(!isset($_POST['cname']) || 
             !isset($_POST['cc'])  || 
-            !isset($_POST['lo']) ||
-            !isset($_POST['cid'])
+            !isset($_POST['lo'])
             ){
 
             echo '請確認教室名稱，教室容量，教室地點已填妥';
@@ -13,13 +12,17 @@
         }
     
         // read data from sign_up.html
-        $cid = $_POST['cid'];
+        // $cid = $_POST['cid'];
         $cname = $_POST['cname'];
         $cc = $_POST['cc'];
         $eq = $_POST['eq'];
         $lo = $_POST['lo'];
 
-
+        $maxIdQuery = "SELECT MAX(Classroom_id) as maxId FROM classroom";
+        $result = $conn->query($maxIdQuery);
+        $row = $result->fetch_assoc();
+        $maxId = $row['maxId'];
+        $cid = $maxId + 1;
       
 
         //check classroom

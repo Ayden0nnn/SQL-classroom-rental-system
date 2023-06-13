@@ -93,12 +93,13 @@
   if ($result->num_rows > 0) {
       echo '<table style="width:50%" align="center">';
       echo '<tr>';
-      echo '<th>Res_Id</th>';
-      echo '<th>User_Id</th>';
-      echo '<th>Classroom_name</th>';
-      echo '<th>year</th>';
-      echo '<th>month</th>';
-      echo '<th>day</th>';
+      echo '<th>預約編號</th>';
+      echo '<th>使用者編號</th>';
+      echo '<th>教室名稱</th>';
+      echo '<th>年</th>';
+      echo '<th>月</th>';
+      echo '<th>日</th>';
+      echo '<th>修改/刪除</th>';
       echo '</tr>';
       while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
           // Process the Result here , need to modify.
