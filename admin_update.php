@@ -3,7 +3,7 @@
     require_once('connect_db.php');
 
 $id = $_GET['id']; 
-$sql = "SELECT * FROM reservation_time as r, classroom as c WHERE User_id='$id' and r.Classroom_id = c.Classroom_id;";
+$sql = "SELECT * FROM reservation_time as r natural join classroom as c WHERE r.Re_id='$id';";
 
 $result = mysqli_query($conn,$sql) ;
 
