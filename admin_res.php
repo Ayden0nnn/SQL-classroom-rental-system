@@ -91,14 +91,14 @@
   $result = $conn->query($sql); // Send SQL Query
 
   if ($result->num_rows > 0) {
-      echo '<table style="width:50%" align="center">';
-      echo '<tr>';
-      echo '<th>預約編號</th>';
-      echo '<th>使用者編號</th>';
-      echo '<th>教室名稱</th>';
-      echo '<th>年</th>';
-      echo '<th>月</th>';
-      echo '<th>日</th>';
+      echo '<table style="border-collapse: collapse; font-size: 0.9em; font-family: sans-serif; min-width: 400px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);" align="center" margin: 20px;>';
+    echo '<tr>';
+      echo '<th style="padding: 10px; background-color: #89b8c7ba;">預約編號</th>';
+      echo '<th style="padding: 10px; background-color: #89b8c7ba;">使用者編號</th>';
+      echo '<th style="padding: 10px; background-color: #89b8c7ba;">教室名稱</th>';
+      echo '<th style="padding: 10px; background-color: #89b8c7ba;">年</th>';
+      echo '<th style="padding: 10px; background-color: #89b8c7ba;">月</th>';
+      echo '<th style="padding: 10px; background-color: #89b8c7ba;">日</th>';
       echo '<th>修改/刪除</th>';
       echo '</tr>';
       while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
@@ -113,14 +113,14 @@
           ?>
 
         <tr id="myTable" class="table-row1 hidden">
-			<td><?php echo $Re_id ; ?></td>
-            <td><?php echo $User_id ; ?></td>
-			<td><?php echo $Classroom_name; ?></td>
-			<td><?php echo  $Res_year; ?></td>
-            <td><?php echo $Res_month?></td>
-            <td><?php echo $Res_day?></td>
-			<td><a href="admin_update.php?id=<?php echo $row['User_id'];?>" class="button">修改</td>
-            <td><a href="admin_delete_res.php?id=<?php echo $row['Re_id'];?>" class="button">刪除</td>
+			<td style="padding: 10px; border: 1px solid #ddd;"><?php echo $Re_id ; ?></td>
+            <td style="padding: 10px; border: 1px solid #ddd; background-color: #f3f3f3;"><?php echo $User_id ; ?></td>
+			<td style="padding: 10px; border: 1px solid #ddd;"><?php echo $Classroom_name; ?></td>
+			<td style="padding: 10px; border: 1px solid #ddd; background-color: #f3f3f3;"><?php echo  $Res_year; ?></td>
+            <td style="padding: 10px; border: 1px solid #ddd;"><?php echo $Res_month?></td>
+            <td style="padding: 10px; border: 1px solid #ddd; background-color: #f3f3f3;"><?php echo $Res_day?></td>
+			<td style="padding: 10px; border: 1px solid #ddd;"><a href="admin_update.php?id=<?php echo $row['User_id'];?>" class="button">修改</td>
+            <td style="padding: 10px; border: 1px solid #ddd;"><a href="admin_delete_res.php?id=<?php echo $row['Re_id'];?>" class="button">刪除</td>
 		</tr>
 
 <?php
