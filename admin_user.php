@@ -80,12 +80,12 @@
   $result = mysqli_query($conn,$sql) ; // Send SQL Query
 
   if ($result->num_rows > 0) {
-      echo '<table style="width:50%" align="center">';
-      echo '<tr>';
-      echo '<th>學號</th>';
-      echo '<th>身分</th>';
-      echo '<th>姓名</th>';
-      echo '<th>手機</th>';
+      echo '<table style="border-collapse: collapse; font-size: 0.9em; font-family: sans-serif; min-width: 400px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);" align="center" margin: 20px;>';
+    echo '<tr>';
+      echo '<th style="padding: 10px; background-color: #89b8c7ba;">學號</th>';
+      echo '<th style="padding: 10px; background-color: #89b8c7ba;">身分</th>';
+      echo '<th style="padding: 10px; background-color: #89b8c7ba;">姓名</th>';
+      echo '<th style="padding: 10px; background-color: #89b8c7ba;">手機</th>';
       echo '</tr>';
       while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
           // Process the Result here , need to modify.
@@ -96,11 +96,11 @@
 ?>
         
 		<tr id="myTable" class="table-row1 hidden">
-			<td><?php echo $User_id ; ?></td>
-			<td><?php echo $User_type; ?></td>
-			<td><?php echo $User_name ?></td>
-            <td><?php echo $User_phone?></td>
-			<td><a href="delete.php?id=<?php echo $row['User_id'];?>" class="button">刪除</td>
+			<td style="padding: 10px; border: 1px solid #ddd;"><?php echo $User_id ; ?></td>
+			<td style="padding: 10px; border: 1px solid #ddd; background-color: #f3f3f3;"><?php echo $User_type; ?></td>
+			<td style="padding: 10px; border: 1px solid #ddd;"><?php echo $User_name ?></td>
+            <td style="padding: 10px; border: 1px solid #ddd; background-color: #f3f3f3;"><?php echo $User_phone?></td>
+			<td style="padding: 10px; border: 1px solid #ddd;"><a href="delete.php?id=<?php echo $row['User_id'];?>" class="button">刪除</td>
 		</tr>
          
 <?php
