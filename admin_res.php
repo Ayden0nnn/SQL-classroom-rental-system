@@ -120,7 +120,7 @@
 			<td style="padding: 10px; border: 1px solid #ddd; background-color: #f3f3f3;"><?php echo  $Res_year; ?></td>
             <td style="padding: 10px; border: 1px solid #ddd;"><?php echo $Res_month?></td>
             <td style="padding: 10px; border: 1px solid #ddd; background-color: #f3f3f3;"><?php echo $Res_day?></td>
-			<td style="padding: 10px; border: 1px solid #ddd;"><a href="admin_update.php?id=<?php echo $row['User_id'];?>" class="button">修改</td>
+			<td style="padding: 10px; border: 1px solid #ddd;"><a href="admin_update.php?id=<?php echo $row['Re_id'];?>" class="button">修改</td>
             <td style="padding: 10px; border: 1px solid #ddd;"><a href="admin_delete_res.php?id=<?php echo $row['Re_id'];?>" class="button">刪除</td>
 		</tr>
 
