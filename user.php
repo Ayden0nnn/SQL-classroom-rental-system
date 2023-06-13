@@ -106,14 +106,14 @@
   $result = $conn->query($sql); // Send SQL Query
 
   if ($result->num_rows > 0) {
-      echo '<table style="width:50%" align="center">';
-      echo '<tr>';
-      echo '<th>教室編號</th>';
-      echo '<th>教室名稱</th>';
-      echo '<th>容量</th>';
-      echo '<th>器材</th>';
-      echo '<th colspan="2">地點</th>';
-      echo '</tr>';
+      echo '<table style="border-collapse: collapse; font-size: 0.9em; font-family: sans-serif; min-width: 400px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);" align="center" margin: 20px;>';
+    echo '<tr>';
+     cho '<th style="padding: 10px; background-color: #89b8c7ba;">教室編號</th>';
+    echo '<th style="padding: 10px; background-color: #89b8c7ba;">教室名稱</th>';
+    echo '<th style="padding: 10px; background-color: #89b8c7ba;">容量</th>';
+    echo '<th style="padding: 10px; background-color: #89b8c7ba;">器材</th>';
+    echo '<th style="padding: 10px; background-color: #89b8c7ba;" colspan="2">地點</th>';
+    echo '</tr>';
       while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
           // Process the Result here , need to modify.
           $Classroom_id = $row['Classroom_id'];
@@ -121,15 +121,15 @@
           $Classroom_capacity= $row['Classroom_capacity'];
 		  $Classroom_equipment = $row['Classroom_equipment'];
 		  $Classroom_location = $row['Classroom_location'];
-          echo '<tr id="myTable" class="table-row1 hidden">';
-          echo '<td>' . $Classroom_id . '</td>';
-          echo '<td>' . $Classroom_name . '</td>';
-          echo '<td>' . $Classroom_capacity . '</td>';
-          echo '<td>' . $Classroom_equipment . '</td>';
-          echo '<td>' . $Classroom_location. '</td>';
+         echo '<tr id="myTable" class="table-row1 hidden">';
+        echo '<td style="padding: 10px; border: 1px solid #ddd;">' . $Classroom_id . '</td>';
+        echo '<td style="padding: 10px; border: 1px solid #ddd; background-color: #f3f3f3;">' . $Classroom_name . '</td>';
+        echo '<td style="padding: 10px; border: 1px solid #ddd;">' . $Classroom_capacity . '</td>';
+        echo '<td style="padding: 10px; border: 1px solid #ddd; background-color: #f3f3f3;">' . $Classroom_equipment . '</td>';
+        echo '<td style="padding: 10px; border: 1px solid #ddd;">' . $Classroom_location . '</td>';
         //   echo "<td><a href='update.php?id=" . $id . "&gender=" . $gender ."'>修改</a></td>";
         //   echo "<td><a href='delete.php?id=" . $id . "'>刪除</a></td>";
-          echo '</tr>';
+        echo '</tr>';
 
       }
   } else {
@@ -148,14 +148,14 @@
 		  $Classroom_equipment = $row['Classroom_equipment'];
 		  $Classroom_location = $row['Classroom_location'];
           echo '<tr id="myTable" class="table-row2 hidden">';
-          echo '<td>' . $Classroom_id . '</td>';
-          echo '<td>' . $Classroom_name . '</td>';
-          echo '<td>' . $Classroom_capacity . '</td>';
-          echo '<td>' . $Classroom_equipment . '</td>';
-          echo '<td>' . $Classroom_location. '</td>';
+        echo '<td style="padding: 10px; border: 1px solid #ddd;">' . $Classroom_id . '</td>';
+        echo '<td style="padding: 10px; border: 1px solid #ddd; background-color: #f3f3f3;">' . $Classroom_name . '</td>';
+        echo '<td style="padding: 10px; border: 1px solid #ddd;">' . $Classroom_capacity . '</td>';
+        echo '<td style="padding: 10px; border: 1px solid #ddd; background-color: #f3f3f3;">' . $Classroom_equipment . '</td>';
+        echo '<td style="padding: 10px; border: 1px solid #ddd;">' . $Classroom_location . '</td>';
         //   echo "<td><a href='update.php?id=" . $id . "&gender=" . $gender ."'>修改</a></td>";
         //   echo "<td><a href='delete.php?id=" . $id . "'>刪除</a></td>";
-          echo '</tr>';
+        echo '</tr>';
 
       }
   } else {
