@@ -156,9 +156,7 @@
           echo '</tr>';
 
       }
-  } else {
-      echo '0 results';
-  }
+  } 
   $User_id= $_GET['ID'];
 
   $sql = 'SELECT * FROM reservation_time natural join classroom where User_id = ?'; // set up your sql query
@@ -197,9 +195,7 @@
           echo '</tr>';
 
       }
-  } else {
-      echo '0 results';
-  }
+  } 
   $User_id= $_GET['ID'];
 
   ?>

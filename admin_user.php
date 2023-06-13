@@ -65,13 +65,14 @@
         <a href="admin.php">教室管理</a>
         <a class="active" href="admin_user.php">使用者管理</a>
         <a href="admin_res.php">預約管理</a>
+        <a href="home.php" class="text-center">登出</a>
     </div>
     <br><br>
     <div id = "root"><div>
         <h1 style="text-align:center;">Classroom Reservation</h1>
         <h2 style="text-align:center;">使用者管理</h2>   
         <div class="text-center">
-        <a class="button">查看使用者</a>
+
 
         
 <?php
@@ -86,6 +87,7 @@
       echo '<th style="padding: 10px; background-color: #89b8c7ba;">身分</th>';
       echo '<th style="padding: 10px; background-color: #89b8c7ba;">姓名</th>';
       echo '<th style="padding: 10px; background-color: #89b8c7ba;">手機</th>';
+      echo '<th style="padding: 10px; background-color: #89b8c7ba;">刪除</th>';
       echo '</tr>';
       while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
           // Process the Result here , need to modify.

@@ -26,9 +26,11 @@ if (isset($id)) {
     $delete_sql = "DELETE FROM users where User_id = '$id'"; // TODO
 
     if ($conn->query($delete_sql) === true) {
-        echo "刪除成功!<a href='admin_user.php'>返回主頁</a>";
+        echo "<script>alert('刪除成功!');</script>";
+		echo "<script>window.location.href='admin_user.php;</script>";
     } else {
-        echo '刪除失敗!';
+        echo "<script>alert('刪除失敗!');</script>";
+		echo "<script>window.location.href='admin_user.php;</script>";
     }
 } else {
     echo '資料不完全';

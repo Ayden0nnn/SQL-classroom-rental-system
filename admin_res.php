@@ -59,6 +59,7 @@
         <a href="admin.php">教室管理</a>
         <a href="admin_user.php">使用者管理</a>
         <a class="active" href="admin_res.php">預約管理</a>
+        <a href="home.php" class="text-center">登出</a>
     </div>
     <br><br>
     <div id = "root"><div>
@@ -99,7 +100,7 @@
       echo '<th style="padding: 10px; background-color: #89b8c7ba;">年</th>';
       echo '<th style="padding: 10px; background-color: #89b8c7ba;">月</th>';
       echo '<th style="padding: 10px; background-color: #89b8c7ba;">日</th>';
-      echo '<th>修改/刪除</th>';
+      echo '<th colspan="2" style="padding: 10px; background-color: #89b8c7ba;">修改/刪除</th>';
       echo '</tr>';
       while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
           // Process the Result here , need to modify.

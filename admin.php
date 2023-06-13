@@ -59,6 +59,7 @@
         <a class="active" href="admin.php">教室管理</a>
         <a href="admin_user.php">使用者管理</a>
         <a href="admin_res.php">預約管理</a>
+        <a href="home.php" class="text-center">登出</a>
     </div>
     <br><br>
     <div id = "root"><div>
