@@ -93,14 +93,14 @@
   $result = $conn->query($sql); // Send SQL Query
 
   if ($result->num_rows > 0) {
-    echo '<table style="width:50%" align="center">';
+    echo '<table style="border-collapse: collapse; font-size: 0.9em; font-family: sans-serif; min-width: 400px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);" align="center" margin: 20px;>';
     echo '<tr>';
-    echo '<th>教室編號</th>';
-    echo '<th>教室名稱</th>';
-    echo '<th>容量</th>';
-    echo '<th>器材</th>';
-    echo '<th colspan="2">地點</th>';
-    echo '<th colspan="2">修改/刪除</th>';
+    echo '<th style="padding: 10px; background-color: #89b8c7ba;">教室編號</th>';
+    echo '<th style="padding: 10px; background-color: #89b8c7ba;">教室名稱</th>';
+    echo '<th style="padding: 10px; background-color: #89b8c7ba;">容量</th>';
+    echo '<th style="padding: 10px; background-color: #89b8c7ba;">器材</th>';
+    echo '<th style="padding: 10px; background-color: #89b8c7ba;" colspan="2">地點</th>';
+    echo '<th style="padding: 10px; background-color: #89b8c7ba;" colspan="2">修改/刪除</th>';
     echo '</tr>';
    
       while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
@@ -114,11 +114,11 @@
 ?>
    
         <tr id="myTable" class="table-row1 hidden">
-            <td><?php echo $Classroom_id; ?></td>
-			<td><?php echo $Classroom_name; ?></td>
-			<td><?php echo $Classroom_capacity ?></td>
-            <td><?php echo $Classroom_equipment?></td>
-            <td colspan="2"><?php echo $Classroom_location?></td>
+            <td style="padding: 10px; border: 1px solid #ddd;"><?php echo $Classroom_id; ?></td>
+			<td style="padding: 10px; border: 1px solid #ddd; background-color: #f3f3f3;"><?php echo $Classroom_name; ?></td>
+			<td style="padding: 10px; border: 1px solid #ddd;"><?php echo $Classroom_capacity ?></td>
+            <td style="padding: 10px; border: 1px solid #ddd; background-color: #f3f3f3;"><?php echo $Classroom_equipment?></td>
+            <td style="padding: 10px; border: 1px solid #ddd;" colspan="2"><?php echo $Classroom_location?></td>
             <td><a href="admin_class_update.php?id=<?php echo $row['Classroom_id'];?>" class="button">修改</td>
 			<td><a href="admin_class_delete.php?id=<?php echo $row['Classroom_id'];?>" class="button">刪除</td>
 		</tr>
