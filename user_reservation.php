@@ -128,13 +128,13 @@
   $result = $conn->query($sql); // Send SQL Query
 
   if ($result->num_rows > 0) {
-      echo '<table style="width:50%" align="center" class="table-row1 hidden">';
+      echo '<table style="border-collapse: collapse; font-size: 0.9em; font-family: sans-serif; min-width: 400px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);" align="center" margin: 20px;>';
       echo '<tr>';
-      echo '<th>學號</th>';
-      echo '<th>教室名稱</th>';
-      echo '<th>年</th>';
-      echo '<th>月</th>';
-      echo '<th>日</th>';
+      echo '<th style="padding: 10px; background-color: #89b8c7ba;">學號</th>';
+      echo '<th style="padding: 10px; background-color: #89b8c7ba;">教室名稱</th>';
+      echo '<th style="padding: 10px; background-color: #89b8c7ba;">年</th>';
+      echo '<th style="padding: 10px; background-color: #89b8c7ba;">月</th>';
+      echo '<th style="padding: 10px; background-color: #89b8c7ba;">日</th>';
       echo '</tr>';
       while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
           // Process the Result here , need to modify.
@@ -146,13 +146,13 @@
 		  $Res_month = $row['Res_month'];
 		  $Res_day = $row['Res_day'];
           echo '<tr id="myTable" class="table-row1 hidden">';
-          echo '<td>' . $User_id . '</td>';
-          echo '<td>' . $Classroom_name . '</td>';
-          echo '<td>' . $Res_year . '</td>';
-          echo '<td>' . $Res_month . '</td>';
-          echo '<td>' . $Res_day. '</td>';
-        //   echo "<td><a href='update.php?id=" . $id . "&gender=" . $gender ."'>修改</a></td>";
-        //   echo "<td><a href='delete.php?id=" . $id . "'>刪除</a></td>";
+          echo '<td style="padding: 10px; border: 1px solid #ddd;">' . $User_id . '</td>';
+          echo '<td style="padding: 10px; border: 1px solid #ddd; background-color: #f3f3f3;">' . $Classroom_name . '</td>';
+          echo '<td style="padding: 10px; border: 1px solid #ddd;">' . $Res_year . '</td>';
+          echo '<td style="padding: 10px; border: 1px solid #ddd; background-color: #f3f3f3;">' . $Res_month . '</td>';
+          echo '<td style="padding: 10px; border: 1px solid #ddd;">' . $Res_day. '</td>';
+        //   echo "<td style="padding: 10px; border: 1px solid #ddd; background-color: #f3f3f3;"><a href='update.php?id=" . $id . "&gender=" . $gender ."'>修改</a></td>";
+        //   echo "<td style="padding: 10px; border: 1px solid #ddd; background-color: #f3f3f3;"><a href='delete.php?id=" . $id . "'>刪除</a></td>";
           echo '</tr>';
 
       }
@@ -167,13 +167,13 @@
 //   $result = $conn->query($sql); // Send SQL Query
 
   if ($result->num_rows > 0) {
-      echo '<table style="width:50%" align="center" class="table-row2 hidden">';
-      echo '<tr>';
-      echo '<th>學號</th>';
-      echo '<th>教室名稱</th>';
-      echo '<th>年</th>';
-      echo '<th>月</th>';
-      echo '<th>日</th>';
+      echo '<table style="border-collapse: collapse; font-size: 0.9em; font-family: sans-serif; min-width: 400px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);" align="center" margin: 20px;>';
+    echo '<tr>';
+      echo '<th style="padding: 10px; background-color: #89b8c7ba;">學號</th>';
+      echo '<th style="padding: 10px; background-color: #89b8c7ba;">教室名稱</th>';
+      echo '<th style="padding: 10px; background-color: #89b8c7ba;">年</th>';
+      echo '<th style="padding: 10px; background-color: #89b8c7ba;">月</th>';
+      echo '<th style="padding: 10px; background-color: #89b8c7ba;">日</th>';
       echo '</tr>';
       while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
           // Process the Result here , need to modify.
@@ -185,13 +185,13 @@
 		  $Res_month = $row['Res_month'];
 		  $Res_day = $row['Res_day'];
           echo '<tr id="myTable" class="table-row2 hidden">';
-          echo '<td>' . $User_id . '</td>';
-          echo '<td>' . $Classroom_name . '</td>';
-          echo '<td>' . $Res_year . '</td>';
-          echo '<td>' . $Res_month . '</td>';
-          echo '<td>' . $Res_day. '</td>';
-        //   echo "<td><a href='update.php?id=" . $id . "&gender=" . $gender ."'>修改</a></td>";
-        //   echo "<td><a href='delete.php?id=" . $id . "'>刪除</a></td>";
+          echo '<td style="padding: 10px; border: 1px solid #ddd;">' . $User_id . '</td>';
+          echo '<td style="padding: 10px; border: 1px solid #ddd; background-color: #f3f3f3;">' . $Classroom_name . '</td>';
+          echo '<td style="padding: 10px; border: 1px solid #ddd;">' . $Res_year . '</td>';
+          echo '<td style="padding: 10px; border: 1px solid #ddd; background-color: #f3f3f3;">' . $Res_month . '</td>';
+          echo '<td style="padding: 10px; border: 1px solid #ddd;">' . $Res_day. '</td>';
+        //   echo "<td style="padding: 10px; border: 1px solid #ddd; background-color: #f3f3f3;"><a href='update.php?id=" . $id . "&gender=" . $gender ."'>修改</a></td>";
+        //   echo "<td style="padding: 10px; border: 1px solid #ddd; background-color: #f3f3f3;"><a href='delete.php?id=" . $id . "'>刪除</a></td>";
           echo '</tr>';
 
       }
