@@ -152,7 +152,7 @@
           echo '<td style="padding: 10px; border: 1px solid #ddd;">' . $Res_year . '</td>';
           echo '<td style="padding: 10px; border: 1px solid #ddd; background-color: #f3f3f3;">' . $Res_month . '</td>';
           echo '<td style="padding: 10px; border: 1px solid #ddd;">' . $Res_day. '</td>';
-        //   echo "<td style="padding: 10px; border: 1px solid #ddd; background-color: #f3f3f3;"><a href='update.php?id=" . $id . "&gender=" . $gender ."'>修改</a></td>";
+          //   echo "<td style="padding: 10px; border: 1px solid #ddd; background-color: #f3f3f3;"><a href='update.php?id=" . $id . "&gender=" . $gender ."'>修改</a></td>";
         //   echo "<td style="padding: 10px; border: 1px solid #ddd; background-color: #f3f3f3;"><a href='delete.php?id=" . $id . "'>刪除</a></td>";
           echo '</tr>';
 
@@ -175,6 +175,7 @@
       echo '<th style="padding: 10px; background-color: #89b8c7ba;">年</th>';
       echo '<th style="padding: 10px; background-color: #89b8c7ba;">月</th>';
       echo '<th style="padding: 10px; background-color: #89b8c7ba;">日</th>';
+      echo '<th colspan="2" style="padding: 10px; background-color: #89b8c7ba;">修改/刪除</th>';
       echo '</tr>';
       while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
           // Process the Result here , need to modify.
@@ -191,6 +192,8 @@
           echo '<td style="padding: 10px; border: 1px solid #ddd;">' . $Res_year . '</td>';
           echo '<td style="padding: 10px; border: 1px solid #ddd; background-color: #f3f3f3;">' . $Res_month . '</td>';
           echo '<td style="padding: 10px; border: 1px solid #ddd;">' . $Res_day. '</td>';
+          echo '<td style="padding: 10px; border: 1px solid #ddd;"><a href="user_update.php?id=' . $row['Re_id'] . '" class="button">修改</a></td>';
+          echo '<td style="padding: 10px; border: 1px solid #ddd;"><a href="user_delete_res.php?id=' . $row['Re_id'] . '" class="button">刪除</a></td>';
         //   echo "<td style="padding: 10px; border: 1px solid #ddd; background-color: #f3f3f3;"><a href='update.php?id=" . $id . "&gender=" . $gender ."'>修改</a></td>";
         //   echo "<td style="padding: 10px; border: 1px solid #ddd; background-color: #f3f3f3;"><a href='delete.php?id=" . $id . "'>刪除</a></td>";
           echo '</tr>';
@@ -282,7 +285,7 @@
     var userAccount = "<?php echo $User_id; ?>";
     window.location.href = "user.php?ID=" + userAccount;
     });
-
+    
     var reservationLink = document.getElementById("reservationLink");
     reservationLink.addEventListener("click", function(event) {
     event.preventDefault();
