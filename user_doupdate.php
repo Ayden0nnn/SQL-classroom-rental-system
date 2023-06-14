@@ -13,7 +13,7 @@
         $result = mysqli_query($conn,$select);
         if( mysqli_num_rows($result) <= 0){
             echo "<script>alert('沒有這間教室喔');</script>";
-		    echo "<script>window.location.href='admin_res.php;</script>";
+		    echo "<script>window.location.href='user_reservation.php?ID=$User_id';</script>";
         }
 
         $row = mysqli_fetch_assoc ( $result );
