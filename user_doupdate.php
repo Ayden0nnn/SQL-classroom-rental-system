@@ -20,12 +20,12 @@
         
         $cid = $row['Classroom_id'];
         $rid = $row['Re_id'];
-
+        $User_id= $_GET['ID'];
        
         
         mysqli_close($conn);
         //Update
-        header("Location: user_doupdate2.php?cid=$cid&rid=$rid&ryear=$ryear&rmonth=$rmonth&rday=$rday"); 
+        header("Location: user_doupdate2.php?cid=$cid&rid=$rid&ryear=$ryear&rmonth=$rmonth&rday=$rday&ID=$User_id"); 
         
        
     

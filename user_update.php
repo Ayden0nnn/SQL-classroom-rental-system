@@ -93,7 +93,7 @@ $User_id= $_GET['ID'];
         <h2 style="text-align:center;">修改資料</h2>   
     <div class="text-center">
 
-	<form action="user_doupdate.php" method="POST">
+	<form action="user_doupdate.php?ID=<?php echo $User_id; ?>" method="POST">
         <fieldset>
           <br>
           <div class="text-center">
@@ -136,7 +136,8 @@ $User_id= $_GET['ID'];
     event.preventDefault(); 
     var userAccount = "<?php echo $User_id; ?>";
     window.location.href = "user_info.php?ID=" + userAccount;
-
+    });
+    
     var updateLink = document.getElementById("updateLink");
     updateLink.addEventListener("click", function(event) {
     event.preventDefault(); 

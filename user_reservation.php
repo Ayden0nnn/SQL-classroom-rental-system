@@ -192,7 +192,7 @@
           echo '<td style="padding: 10px; border: 1px solid #ddd;">' . $Res_year . '</td>';
           echo '<td style="padding: 10px; border: 1px solid #ddd; background-color: #f3f3f3;">' . $Res_month . '</td>';
           echo '<td style="padding: 10px; border: 1px solid #ddd;">' . $Res_day. '</td>';
-          echo '<td style="padding: 10px; border: 1px solid #ddd;"><a href="user_update.php?id=' . $row['Re_id'] . '" class="button">修改</a></td>';
+          echo '<td style="padding: 10px; border: 1px solid #ddd;"><a href="user_update.php?id=' . $row['Re_id'] .'&ID='.$User_id. '" class="button">修改</a></td>';
           echo '<td style="padding: 10px; border: 1px solid #ddd;"><a href="user_delete_res.php?id=' . $row['Re_id'] . '" class="button">刪除</a></td>';
         //   echo "<td style="padding: 10px; border: 1px solid #ddd; background-color: #f3f3f3;"><a href='update.php?id=" . $id . "&gender=" . $gender ."'>修改</a></td>";
         //   echo "<td style="padding: 10px; border: 1px solid #ddd; background-color: #f3f3f3;"><a href='delete.php?id=" . $id . "'>刪除</a></td>";
