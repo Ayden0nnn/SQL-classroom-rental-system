@@ -73,6 +73,7 @@
         <a class="button" id="toggleButton0" onclick="toggleTable(0)">預約教室</a>
         <a class="button" id="toggleButton1" onclick="toggleTable(1)">查看已預約教室</a>
         <a class="button" id="toggleButton2" onclick="toggleTable(2)">查看借用紀錄</a>
+        <p> </p>
         <!-- <h1 align="center">新增學生資料</h1> -->
     <form action="create_res.php" method="post">
       <table width="500" border="1"  align="center" id="myTable" class="table-row0 hidden">

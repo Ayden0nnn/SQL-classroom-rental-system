@@ -78,6 +78,7 @@
         <div class="text-center">
         <a class="button" id="toggleButton1" onclick="toggleTable(1)">編號排序</a>
         <a class="button" id="toggleButton2" onclick="toggleTable(2)">容量排序</a>
+        <p></p>
         <?php
   // ******** update your personal settings ********
   $servername = '140.122.184.125:3307';

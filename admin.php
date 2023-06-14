@@ -67,6 +67,7 @@
         <h2 style="text-align:center;">教室管理</h2>   
         <div class="text-center">
         <a class="button" href="admin_class_insert.html">新增教室</a>
+        <p></p>
  
  <?php
   // ******** update your personal settings ********
