@@ -128,7 +128,7 @@
   $result = $conn->query($sql); // Send SQL Query
 
   if ($result->num_rows > 0) {
-      echo '<table style="border-collapse: collapse; font-size: 0.9em; font-family: sans-serif; min-width: 400px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);" align="center" margin: 20px;>';
+      echo '<table class="table-row1 hidden" style="border-collapse: collapse; font-size: 0.9em; font-family: sans-serif; min-width: 400px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);" align="center" margin: 20px;>';
       echo '<tr>';
       echo '<th style="padding: 10px; background-color: #89b8c7ba;">學號</th>';
       echo '<th style="padding: 10px; background-color: #89b8c7ba;">教室名稱</th>';
@@ -167,7 +167,7 @@
 //   $result = $conn->query($sql); // Send SQL Query
 
   if ($result->num_rows > 0) {
-      echo '<table style="border-collapse: collapse; font-size: 0.9em; font-family: sans-serif; min-width: 400px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);" align="center" margin: 20px;>';
+      echo '<table class="table-row2 hidden" style="border-collapse: collapse; font-size: 0.9em; font-family: sans-serif; min-width: 400px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);" align="center" margin: 20px;>';
     echo '<tr>';
       echo '<th style="padding: 10px; background-color: #89b8c7ba;">學號</th>';
       echo '<th style="padding: 10px; background-color: #89b8c7ba;">教室名稱</th>';
